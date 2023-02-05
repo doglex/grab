@@ -1,3 +1,4 @@
-##蛋蛋赞视频信息收集
+## 蛋蛋赞视频信息收集
 + https://www.dandanzan10.top/
-+ with gevent/monkeypatch 
++ with gevent/monkeypatch
++ with pandas 
