@@ -1,15 +1,9 @@
-import requests
-from bs4 import BeautifulSoup
-from requests.adapters import HTTPAdapter
+from get_soup import get_soup
 
 
 def parse_item(url: str) -> dict:
-    s = requests.Session()
-    s.mount('http://', HTTPAdapter(max_retries=3))
-    s.mount('https://', HTTPAdapter(max_retries=3))
     try:
-        ans = requests.get(url, timeout=5)
-        soup = BeautifulSoup(ans.content, features="lxml")
+        soup = get_soup(url)
         # print(soup)
         return {
             "title": soup.find("meta", attrs={"property": "og:title"}).get("content"),
